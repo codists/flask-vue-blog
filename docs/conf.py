@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'flask-vue搭建博客教程'
+project = 'Flask + VUE 博客教程'
 copyright = '2021, codists'
 author = 'codists'
 
@@ -55,6 +55,7 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 master_doc = 'index'
+language = 'zh_CN'
 
 
 
