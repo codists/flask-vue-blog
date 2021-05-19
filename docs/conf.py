@@ -30,6 +30,7 @@ author = 'codists'
 extensions = [
     'recommonmark'
 ]
+source_suffix = ['.rst', '.md']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,10 +45,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-#默认主题：html_theme = 'alabaster'
-# Python 文档主题：html_theme = 'python_docs_theme'
+
 html_theme = "sphinx_rtd_theme"
+
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
