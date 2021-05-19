@@ -5,3 +5,6 @@
 
 # Read the docs 
 docs/_build/
+
+# 虚拟环境
+venv/
