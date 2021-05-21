@@ -1,0 +1,33 @@
+=============================
+项目初始化
+=============================
+
+Flask-Vue 博客系统前端使用框架 [Vue.js](https://v3.vuejs.org/)，后端使用框架 [Flask](https://flask.palletsprojects.com/)，数据库使用 [MySQL](https://www.mysql.com/)。
+
+开发环境说明
+
+1、系统：`Ubuntu 20.10 <https://ubuntu.com/>`_
+
+.. code-block:: bash
+
+	$ lsb_release -a
+	No LSB modules are available.
+	Distributor ID:	Ubuntu
+	Description:	Ubuntu 20.10
+	Release:	20.10
+	Codename:	groovy
+    
+2、后端集成开发环境（ IDE）： [PyCharm Professional 2021.1](https://www.jetbrains.com/pycharm/)
+
+3、前端编辑器（ editor）: [Visual Studio Code 1.56.2](https://code.visualstudio.com/)
+
+在实际的开发中，对于每个人而言，使用的开发工具多多少少有些不同——比如"系统"这一项，有些人使用的是 Windows 系统，有的人使用的是 CentOS 系统......所以在某些操作上可能会有差异，遇到问题的时候可根据实际情况灵活处理，不必一味的按照教程去操作。
+
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ../c01/*
