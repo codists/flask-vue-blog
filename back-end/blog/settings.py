@@ -1,14 +1,12 @@
 import os
 import sys
 
-WIN = sys.platform.startswith('win')
-prefix = '///' if WIN else '////'
 
 
 class BaseConfig:
     JSON_AS_ASCII = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:' + prefix + os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data.db')
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost/test'
 
 
 class ProductionConfig(BaseConfig):

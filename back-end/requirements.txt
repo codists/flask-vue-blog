@@ -4,3 +4,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 Werkzeug==1.0.1
+python-dotenv==0.15.0
+pymysql==1.0.2
+flask_migrate==3.0.0
