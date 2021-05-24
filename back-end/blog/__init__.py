@@ -15,7 +15,6 @@ def create_app(config_name=None):
     app = Flask(__name__)
     app.config.from_object(config_options[config_name])
     Register(app)
-    print('app:', app.extensions['migrate'])
     return app
 
 
