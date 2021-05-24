@@ -1,3 +1,6 @@
+"""
+1、
+"""
 from datetime import datetime
 
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -11,7 +14,7 @@ class User(db.Model):
     """
     id = db.Column(db.Integer, primary_key=True)
     telephone = db.Column(db.String(11), nullable=False, unique=True)
-    nickname = db.Column(db.String(24), nullable=False)
+    nickname = db.Column(db.String(24), nullable=False, unique=True)
     avatar = db.Column(db.String(100))
     _password = db.Column('password', db.String(128), nullable=False)
 
@@ -34,6 +37,6 @@ class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
     content = db.Column(db.Text, nullable=False)
-    publish_time = db.Column(db.DateTime, default=datetime.now)
+    publish_time = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref='articles')
