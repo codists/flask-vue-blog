@@ -8,7 +8,7 @@ import random
 from PIL import Image, ImageDraw, ImageFont
 
 
-def generate_random(number=4, source=None):
+def generate_random_number(number=4, source=None):
     if source is None:
         source = string.digits
     return ''.join(random.sample(source, number))
