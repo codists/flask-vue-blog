@@ -1,0 +1,66 @@
+前端项目初始化
+==============
+
+安装 npm
+--------
+
+`npm <https://www.npmjs.com/>`__ 是什么？npm 的全称是 Node Package
+Manager（Node 包管理器）。类似于后端的 pip。
+
+为什么使用 npm？请查看文章：\ `npm
+是干什么的？（非教程） <https://zhuanlan.zhihu.com/p/24357770>`__\ 。
+
+怎么安装 npm？因为 npm 是内置在 Node.js 里面的，所以，一般来说，安装了
+`Node.js <https://nodejs.org/en/download/>`__\ ，那么我们就可以使用
+Node.js 了。下面是 Ubuntu 系统安装 npm 示范（Ubuntu
+系统就是那个不一般的情况，Node.js 和 npm 需要分开安装）：
+
+安装：
+
+.. code:: python
+
+    $ sudo apt install nodejs npm
+
+验证安装是否成功：
+
+.. code:: python
+
+    $ node -v
+    v12.18.2
+    $ npm -v
+    6.14.8
+
+安装 Vue CLI
+------------
+
+Vue CLI
+是什么？这里引用官方的定义：\ ``Vue CLI is a full system for rapid Vue.js development``\ 。
+
+为什么使用 Vue CLI？为了开发更快速。
+
+怎么安装 Vue CLI？使用 npm
+进行安装，具体可以参考官方文档：\ `Installation <https://cli.vuejs.org/guide/installation.html>`__\ 。下面是
+Ubuntu 系统安装 Vue CLI 示范：
+
+安装：
+
+.. code:: python
+
+    $ sudo npm install -g @vue/cli
+
+（1）\ ``-g`` ：\ ``--global``\ ，表示全局安装。 （2）npm 所有命令详见
+`npm CLI
+commands <https://docs.npmjs.com/cli/v7/commands>`__\ ，或者使用
+``npm --help`` 查看。
+
+验证
+
+.. code:: python
+
+    $ vue --version
+    @vue/cli 4.5.13
+
+参考资料
+--------
+
+[1] npm CLI documentation: https://docs.npmjs.com/cli/v7
