@@ -6,7 +6,7 @@ from flask import Flask, Blueprint
 
 from .models import *
 from .settings import config
-from .extensions import db, cors, migrate
+from .extensions import db,  migrate
 
 
 def create_app(config_name=None):
@@ -15,7 +15,6 @@ def create_app(config_name=None):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     Register(app)
-    print('app:', app.extensions['migrate'])
     return app
 
 
@@ -30,8 +29,7 @@ class Register:
 
     @staticmethod
     def extensions(app):
-        db.init_app(app)
-        cors.init_app(app)
+        # db.init_app(app)
         migrate.init_app(app, db)
 
     @staticmethod

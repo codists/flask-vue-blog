@@ -2,7 +2,6 @@ import os
 import sys
 
 
-
 class BaseConfig:
     JSON_AS_ASCII = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False

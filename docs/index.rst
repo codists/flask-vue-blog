@@ -13,6 +13,7 @@ Flask + VUE 博客教程
    :glob:
    
    copyright
+   preface
    chapters/*
    sphinx
 	
