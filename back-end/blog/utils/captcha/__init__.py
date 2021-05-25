@@ -7,6 +7,8 @@ import random
 
 from PIL import Image, ImageDraw, ImageFont
 
+from .sms import SendSms
+
 
 def generate_random_number(number=4, source=None):
     if source is None:
