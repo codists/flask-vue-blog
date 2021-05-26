@@ -3,8 +3,9 @@ import string
 
 from flask import request, make_response, Blueprint
 
+from blog.models import User
 from blog.utils.cache import cache
-from blog.utils.captcha import generate_random_number, Captcha
+from blog.utils.captcha import generate_random_number, Captcha, SendSms
 
 bp = Blueprint('register', __name__, url_prefix='/')
 
@@ -34,14 +35,18 @@ def graph_captcha():
     return resp
 
 
-@bp.post('/sms_captcha')
+@bp.get('/sms_captcha')
 def sms_captcha():
     random_id = request.headers.get('random_id')
     request_graph_captcha = request.json.get('graph_captcha')
     if request_graph_captcha != cache.get(random_id):
         return {'code': 400, 'msg': 'graph captcha error'}
-    # TODO send sms
-    pass
+    telephone = request.json.get('telephone')
+    if User.query.filter_by(telephone=telephone).first():
+        return {'code': 400, 'msg': 'telephone already exists'}
+    random_number = generate_random_number(6)
+    SendSms.send(telephone, random_number)
+    return {'code': 200, 'msg': 'success'}
 
 
 def generate_random_id():
