@@ -132,3 +132,5 @@ dmypy.json
 .idea/
 
 migrations/
+
+cache.json  # 测试用的缓存文件

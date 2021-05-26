@@ -1,4 +1,4 @@
-前端项目初始化
+1.2 前端项目初始化
 ==============
 
 安装 npm
@@ -16,7 +16,9 @@ Node.js 了。下面是 Ubuntu 系统安装 npm 示范（Ubuntu
 系统就是那个不一般的情况，Node.js 和 npm 需要分开安装）：
 
 安装：
+
 ~:
+
 ::
 
     $ sudo apt install nodejs npm
@@ -127,7 +129,45 @@ flask-vue-blog/front-end：
 .. figure:: ../images/01_VUE启动首页.png
    :alt: 
 
+npm run serve
+~~~~~~~~~~~~~
+
+要启动项目，我们使用 ``npm run serve`` ，那这背后具体做了什么呢？
+
+（1）\ ``run`` 是
+`run-script <https://docs.npmjs.com/cli/v7/commands/npm-run-script>`__
+的别名，\ ``serve`` 是一个命令。所以 ``npm run serve`` 的意思是运行
+``serve`` 命令。那 ``serve`` 命令又是在哪里定义的呢？在
+``flask-vue-blog/front-end/package.json`` 文件里面，使用 ``scripts``
+对象里面定义。
+
+flask-vue-blog/front-end/package.json：
+
+::
+
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+      },
+
+（2）\ ``vue-cli-service`` 又是什么呢？\ ``vue-cli-service``
+是一个可执行命令（即二进制可执行文件），即
+``./node_modules/.bin/vue-cli-service``\ 。所以执行 ``npm run serve``
+就等同于执行 ``vue-cli-service`` 。
+
+flask-vue-blog/front-end/：
+
+::
+
+    $ npm run serve
+    # 等同于执行
+    $ ./node_modules/.bin/vue-cli-service serve
+
 参考资料
 --------
 
-[1] npm CLI documentation: https://docs.npmjs.com/cli/v7
+[1] npm CLI 文档： https://docs.npmjs.com/cli/v7
+
+[2] 阮一峰，《npm scripts
+使用指南》：https://www.ruanyifeng.com/blog/2016/10/npm\_scripts.html

@@ -5,10 +5,8 @@ import click
 from flask import Flask, Blueprint
 
 from .models import *
-
 from .settings import config_options
 from .extensions import db, cors, migrate
-
 
 
 def create_app(config_name=None):
@@ -31,7 +29,8 @@ class Register:
 
     @staticmethod
     def extensions(app):
-        # db.init_app(app)
+        db.init_app(app)
+        cors.init_app(app)
         migrate.init_app(app, db)
 
     @staticmethod

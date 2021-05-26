@@ -5,18 +5,17 @@ import click
 from flask import Flask, Blueprint
 
 from .models import *
-
-from .settings import config_options
+from .settings import config
 from .extensions import db, cors, migrate
-
 
 
 def create_app(config_name=None):
     if config_name is None:
         config_name = 'development'
     app = Flask(__name__)
-    app.config.from_object(config_options[config_name])
+    app.config.from_object(config[config_name])
     Register(app)
+    print('app:', app.extensions['migrate'])
     return app
 
 
@@ -24,18 +23,19 @@ class Register:
 
     def __init__(self, app):
         self.extensions(app)
-        self.scan_blueprint(app)
+        self.blueprint(app)
         self.commands(app)
         self.error_handlers(app)
         self.shell_context(app)
 
     @staticmethod
     def extensions(app):
-        # db.init_app(app)
+        db.init_app(app)
+        cors.init_app(app)
         migrate.init_app(app, db)
 
     @staticmethod
-    def scan_blueprint(app, blueprints_dirname='api'):
+    def blueprint(app, blueprints_dirname='api'):
         blueprints_path = os.path.join(app.root_path, blueprints_dirname)
         import_str = f'{app.name}.{blueprints_dirname}.'
         for item in [py_file for py_file in os.listdir(blueprints_path) if py_file.endswith('.py')]:

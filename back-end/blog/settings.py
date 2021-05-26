@@ -20,7 +20,7 @@ class TestingConfig(BaseConfig):
     TESTING = True
 
 
-config = {
+config_options = {
     'development': DevConfig,
     'testing': TestingConfig,
     'production': ProductionConfig

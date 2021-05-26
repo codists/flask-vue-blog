@@ -5,10 +5,13 @@ import click
 from flask import Flask, Blueprint
 
 from .models import *
-
+<<<<<<< HEAD
+from .settings import config
+from .extensions import db,  migrate
+=======
 from .settings import config_options
 from .extensions import db, cors, migrate
-
+>>>>>>> 452c0c0cbd8ef2dd21ba3b7ec0c198774cdd0b9f
 
 
 def create_app(config_name=None):
