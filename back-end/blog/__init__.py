@@ -7,7 +7,7 @@ from flask import Flask, Blueprint
 from .models import *
 
 from .settings import config_options
-from .extensions import db, cors, migrate
+from .extensions import db, migrate
 
 
 

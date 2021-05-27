@@ -6,6 +6,11 @@
 
 Flask-Vue 博客系统前端使用框架 `Vue.js <(https://v3.vuejs.org/>`_，后端使用框架 `Flask <https://flask.palletsprojects.com>`_，数据库使用 关系型数据库 `MySQL <https://www.mysql.com>`_。技术选型的时候为什么选择了 Vue.js，Flask 和 MySQL 呢？因为这三样技术在实际的开发中应用比较普遍，掌握这些技术后有利于在实际的开发中使用。
 
+前端项目使用 Vue.js 框架，需要有 HTML，JavaScript, CSS 的基础，所以在写项目之前你最好先看完下面的书（注意：看最新版的），或者写的时候遇到不懂的问题去书里面找：
+
+| 1、HTML:
+| 2、JavaScript：阮一峰《ES6标准入门》，《JavaScript 高级程序设计》
+| 3、CSS：
 
 
 .. toctree::
