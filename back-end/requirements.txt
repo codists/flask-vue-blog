@@ -7,3 +7,5 @@ Werkzeug==1.0.1
 python-dotenv==0.15.0
 pymysql==1.0.2
 flask_migrate==3.0.0
+qcloudsms_py==0.1.4
+pillow==8.2.0
