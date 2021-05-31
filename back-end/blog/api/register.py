@@ -3,9 +3,9 @@ import string
 
 from flask import request, make_response, Blueprint
 
-from blog.models import User
-from blog.utils.cache import cache
-from blog.utils.captcha import generate_random_number, Captcha, SendSms
+from ..models import User
+from ..utils.cache import cache
+from ..utils.captcha import generate_random_number, Captcha, SendSms
 
 bp = Blueprint('register', __name__, url_prefix='/')
 

@@ -7,7 +7,7 @@ import threading
 
 from qcloudsms_py import SmsSingleSender
 
-from blog.utils.cache import cache
+from ...utils.cache import cache
 
 
 APPID = 1400304164  # SDK AppID 以1400开头
