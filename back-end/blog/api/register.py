@@ -26,12 +26,14 @@ def graph_captcha():
     random_id = generate_random_id()
     cache.set(random_id, random_number)
     image = captcha.generate_graph_captcha(random_number)
+    print(2222, image)
     out = io.BytesIO()
     image.save(out, 'png')
     out.seek(0)
     resp = make_response(out.read())
     resp.content_type = 'image/png'
     resp.headers.add('random_id', random_id)
+    print(resp)
     return resp
 
 
@@ -56,3 +58,4 @@ def generate_random_id():
         if cache.get(random_id) is None:
             break
     return random_id
+

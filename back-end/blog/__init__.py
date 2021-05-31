@@ -10,7 +10,6 @@ from .settings import config_options
 from .extensions import db, migrate
 
 
-
 def create_app(config_name=None):
     if config_name is None:
         config_name = 'development'

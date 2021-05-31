@@ -66,6 +66,7 @@ class Captcha:
         # B：B（蓝色）0-255
         # A：Alpha（透明度）
         image = Image.new('RGBA', (width, height), self.__generate_random_color(0, 100))
+        print(111, self.__generate_random_font())
         font = ImageFont.truetype(self.__generate_random_font(), self.fontsize)  # 验证码的字体
         draw = ImageDraw.Draw(image)  # 创建画笔
         text = random_number  # 生成字符串
