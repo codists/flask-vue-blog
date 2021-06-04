@@ -26,7 +26,7 @@ class User(db.Model):
         self._password = generate_password_hash(value)
     
     def check_password(self, value):
-        return check_password_hash(self._password, value)
+        return check_password_hash(self.password, value)
 
     @classmethod
     def find_by_telephone(cls, telephone):

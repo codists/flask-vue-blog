@@ -9,16 +9,17 @@ from ..utils.cache import cache
 from ..utils.captcha import generate_random_number, Captcha, SendSms
 
 """
+暂时废弃，先使用 user.py
 1.获取图形验证码
 2.验证图形验证码，发送短信验证码
 3.验证短信验证码，验证用户是否已注册
 """
-bp = Blueprint('register', __name__, url_prefix='/')
+bp = Blueprint('register', __name__)
 
 
-@bp.route('/register')
+# @bp.post('/register')
 def register():
-    request_data = request.json
+    request_data = request.json or {}
     request_telephone = request_data.get('telephone')
     request_password = request_data.get('password')
     request_nickname = request_data.get('nickname')

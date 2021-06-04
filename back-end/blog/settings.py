@@ -11,7 +11,7 @@ class ProductionConfig(BaseConfig):
 
 
 class DevConfig(BaseConfig):
-    pass
+    JWT_SECRET = 'dev'
 
 
 class TestingConfig(BaseConfig):
