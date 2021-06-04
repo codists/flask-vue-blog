@@ -27,7 +27,10 @@ class User(db.Model):
     
     def check_password(self, value):
         return check_password_hash(self._password, value)
-    
+
+    @classmethod
+    def find_by_telephone(cls, telephone):
+        return cls.query.filter_by(telephone=telephone).first()
 
 
 class Article(db.Model):

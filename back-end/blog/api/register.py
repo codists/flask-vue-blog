@@ -4,9 +4,15 @@ import string
 from flask import request, make_response, Blueprint
 
 from ..models import User
+from ..extensions import db
 from ..utils.cache import cache
 from ..utils.captcha import generate_random_number, Captcha, SendSms
 
+"""
+1.获取图形验证码
+2.验证图形验证码，发送短信验证码
+3.验证短信验证码，验证用户是否已注册
+"""
 bp = Blueprint('register', __name__, url_prefix='/')
 
 
@@ -14,31 +20,44 @@ bp = Blueprint('register', __name__, url_prefix='/')
 def register():
     request_data = request.json
     request_telephone = request_data.get('telephone')
-    request_sms_code = request_data.get('sms_code')
     request_password = request_data.get('password')
     request_nickname = request_data.get('nickname')
 
+    if request_nickname and request_telephone and request_password:
+        if User.find_by_telephone(request_telephone):
+            return {'code': 400, 'msg': 'user already exists'}
+        user = User(telephone=request_telephone, password=request_password)
+        db.session.add(user)
+        db.session.commit()
+        return {'code': 200, 'msg': 'success'}
+    else:
+        return {'code': 400, 'msg': 'missing parameter'}
 
-@bp.get('/graph_captcha')
+
+# @bp.get('/graph_captcha')
 def graph_captcha():
+    """
+    图形验证码
+    """
     captcha = Captcha()
     random_number = generate_random_number()
     random_id = generate_random_id()
     cache.set(random_id, random_number)
     image = captcha.generate_graph_captcha(random_number)
-    print(2222, image)
     out = io.BytesIO()
     image.save(out, 'png')
     out.seek(0)
     resp = make_response(out.read())
     resp.content_type = 'image/png'
     resp.headers.add('random_id', random_id)
-    print(resp)
     return resp
 
 
-@bp.get('/sms_captcha')
+# @bp.get('/sms_captcha')
 def sms_captcha():
+    """
+    短信验证码
+    """
     random_id = request.headers.get('random_id')
     request_graph_captcha = request.json.get('graph_captcha')
     if request_graph_captcha != cache.get(random_id):
