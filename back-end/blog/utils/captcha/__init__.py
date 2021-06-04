@@ -10,6 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 from .sms import SendSms
 from ...utils import BASEDIR
 
+
 def generate_random_number(number=4, source=None):
     if source is None:
         source = string.digits
@@ -65,17 +66,8 @@ class Captcha:
         # G：G（绿色）0-255
         # B：B（蓝色）0-255
         # A：Alpha（透明度）
-<<<<<<< HEAD
-        image = Image.new('RGBA', (width, height), self.__generate_random_color(0, 100))
-        print(111, self.__generate_random_font())
-        font = ImageFont.truetype(self.__generate_random_font(), self.fontsize)  # 验证码的字体
-||||||| 5bb98968
-        image = Image.new('RGBA', (width, height), self.__generate_random_color(0, 100))
-        font = ImageFont.truetype(self.__generate_random_font(), self.fontsize)  # 验证码的字体
-=======
         image = Image.new('RGBA', (width, height), self._generate_random_color(0, 100))
         font = ImageFont.truetype(self._generate_random_font(), self.fontsize)  # 验证码的字体
->>>>>>> eefe7407c7923dffc54bc0cbeb6520794efe3fa2
         draw = ImageDraw.Draw(image)  # 创建画笔
         text = random_number  # 生成字符串
         font_width, font_height = font.getsize(text)  # 获取字体的尺寸
