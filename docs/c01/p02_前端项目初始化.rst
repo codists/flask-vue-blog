@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 1.2 前端项目初始化
+=======
+前端项目初始化
+>>>>>>> main
 ==============
 
 安装 npm
@@ -17,17 +21,25 @@ Node.js 了。下面是 Ubuntu 系统安装 npm 示范（Ubuntu
 
 安装：
 
+<<<<<<< HEAD
 ~:
 
 ::
+=======
+.. code:: python
+>>>>>>> main
 
     $ sudo apt install nodejs npm
 
 验证安装是否成功：
 
+<<<<<<< HEAD
 ~:
 
 ::
+=======
+.. code:: python
+>>>>>>> main
 
     $ node -v
     v12.18.2
@@ -37,10 +49,17 @@ Node.js 了。下面是 Ubuntu 系统安装 npm 示范（Ubuntu
 安装 Vue CLI
 ------------
 
+<<<<<<< HEAD
 `Vue CLI <https://cli.vuejs.org/guide/>`__
 是什么？这里引用官方的定义：\ ``Vue CLI is a full system for rapid Vue.js development``\ 。
 
 为什么使用 Vue CLI？为了开发更快速，如直接初始化项目。
+=======
+Vue CLI
+是什么？这里引用官方的定义：\ ``Vue CLI is a full system for rapid Vue.js development``\ 。
+
+为什么使用 Vue CLI？为了开发更快速。
+>>>>>>> main
 
 怎么安装 Vue CLI？使用 npm
 进行安装，具体可以参考官方文档：\ `Installation <https://cli.vuejs.org/guide/installation.html>`__\ 。下面是
@@ -48,6 +67,7 @@ Ubuntu 系统安装 Vue CLI 示范：
 
 安装：
 
+<<<<<<< HEAD
 ~:
 
 ::
@@ -68,10 +88,25 @@ commands <https://docs.npmjs.com/cli/v7/commands>`__\ ，或者使用
 ~:
 
 ::
+=======
+.. code:: python
+
+    $ sudo npm install -g @vue/cli
+
+（1）\ ``-g`` ：\ ``--global``\ ，表示全局安装。 （2）npm 所有命令详见
+`npm CLI
+commands <https://docs.npmjs.com/cli/v7/commands>`__\ ，或者使用
+``npm --help`` 查看。
+
+验证
+
+.. code:: python
+>>>>>>> main
 
     $ vue --version
     @vue/cli 4.5.13
 
+<<<<<<< HEAD
 创建 frontend
 -------------
 
@@ -171,3 +206,9 @@ flask-vue-blog/front-end/：
 
 [2] 阮一峰，《npm scripts
 使用指南》：https://www.ruanyifeng.com/blog/2016/10/npm\_scripts.html
+=======
+参考资料
+--------
+
+[1] npm CLI documentation: https://docs.npmjs.com/cli/v7
+>>>>>>> main
